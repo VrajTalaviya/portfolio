@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vraj Talaviya offers website design, full-stack development, Google and Meta Ads, social media management, and catalogue design for businesses." />
+  <meta name="keywords" content="Vraj Talaviya, website design, full-stack development, Google Ads, Meta Ads, social media management, catalogue design" />
+  <meta name="author" content="Vraj Talaviya" />
+  <meta name="theme-color" content="#07111f" />
+  <title>Vraj Talaviya — Web, Marketing & Design Services</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg2:#0a1728;
+      --surface:rgba(12,28,47,.72);
+      --surface2:#0d1d31;
+      --line:rgba(148,177,211,.16);
+      --text:#edf6ff;
+      --muted:#8ea4ba;
+      --blue:#5aa9ff;
+      --cyan:#53e0ff;
+      --green:#71f3c4;
+      --shadow:0 24px 80px rgba(0,0,0,.35);
+      --radius:22px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Manrope,system-ui,sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%,rgba(83,224,255,.10),transparent 28%),
+        radial-gradient(circle at 85% 25%,rgba(90,169,255,.12),transparent 28%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";
+      position:fixed;inset:0;pointer-events:none;z-index:-1;
+      background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+                       linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+      background-size:55px 55px;
+      mask-image:linear-gradient(to bottom,black,transparent 80%);
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .mono{font-family:"DM Mono",monospace}
+    .eyebrow{
+      color:var(--cyan);font:500 .72rem "DM Mono",monospace;
+      letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px
+    }
+    .section{padding:110px 0}
+    .section-head{max-width:720px;margin-bottom:48px}
+    .section-title{
+      font-size:clamp(2rem,4vw,3.35rem);line-height:1.05;
+      letter-spacing:-.045em;margin-bottom:16px
+    }
+    .section-copy{color:var(--muted);max-width:680px}
+    .gradient-text{
+      background:linear-gradient(90deg,#fff 10%,var(--cyan),var(--blue));
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+
+    /* NAV */
+    nav{
+      position:fixed;top:16px;left:50%;transform:translateX(-50%);
+      width:min(var(--max),calc(100% - 28px));z-index:100;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:13px 16px 13px 20px;
+      background:rgba(7,17,31,.72);backdrop-filter:blur(18px);
+      border:1px solid var(--line);border-radius:999px;
+      box-shadow:0 12px 40px rgba(0,0,0,.22)
+    }
+    .logo{font-weight:800;letter-spacing:-.04em}
+    .logo span{color:var(--cyan)}
+    .nav-links{display:flex;gap:6px;list-style:none}
+    .nav-links a{
+      padding:8px 12px;border-radius:999px;color:var(--muted);
+      font:400 .72rem "DM Mono",monospace;transition:.2s
+    }
+    .nav-links a:hover{color:#fff;background:rgba(255,255,255,.06)}
+    .nav-cta{
+      padding:9px 14px;border-radius:999px;background:#fff;color:#07111f;
+      font-size:.72rem;font-weight:800
+    }
+
+
+    /* HERO */
+    .hero{min-height:100vh;display:grid;align-items:center;padding:130px 0 70px}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);max-width:var(--max);gap:54px;align-items:center}
+    .availability{
+      display:inline-flex;align-items:center;gap:9px;padding:7px 11px;
+      border:1px solid rgba(113,243,196,.2);background:rgba(113,243,196,.06);
+      border-radius:999px;color:#a9f9dc;font:400 .7rem "DM Mono",monospace;
+      margin-bottom:22px
+    }
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green)}
+    h1{
+      font-size:clamp(4.2rem,7.2vw,7.2rem);line-height:.88;
+      letter-spacing:-.075em;max-width:760px
+    }
+    .hero-role{font-size:clamp(1rem,2vw,1.35rem);color:#b9cce0;margin-top:28px}
+    .hero-role strong{color:#fff}
+    .hero-copy{max-width:620px;color:var(--muted);margin-top:18px;font-size:1rem;line-height:1.75}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      padding:13px 18px;border-radius:12px;font-size:.82rem;font-weight:800;
+      border:1px solid var(--line);transition:.2s
+    }
+    .btn-primary{background:#fff;color:#07111f;border-color:#fff}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 35px rgba(255,255,255,.12)}
+    .btn-ghost{color:#dcecff;background:rgba(255,255,255,.025)}
+    .btn-ghost:hover{border-color:rgba(83,224,255,.5);transform:translateY(-2px)}
+
+    .hero-panel{
+      padding:24px;border:1px solid var(--line);border-radius:28px;
+      background:linear-gradient(145deg,rgba(19,44,72,.72),rgba(8,20,35,.65));
+      box-shadow:var(--shadow);position:relative;overflow:hidden
+    }
+    .hero-panel:after{
+      content:"";position:absolute;width:220px;height:220px;right:-90px;top:-90px;
+      background:radial-gradient(circle,rgba(83,224,255,.22),transparent 68%)
+    }
+    .terminal-top{display:flex;gap:7px;margin-bottom:22px}
+    .terminal-top i{width:8px;height:8px;border-radius:50%;background:#5e738a}
+    .code-line{font:400 .76rem/2 "DM Mono",monospace;color:#9cb0c5}
+    .code-line .key{color:var(--cyan)}
+    .code-line .val{color:#b9f7dc}
+    .code-line .str{color:#b9d2ff}
+    .hero-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+    .metric{padding:14px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025)}
+    .metric b{display:block;font-size:1.25rem}
+    .metric span{color:var(--muted);font:400 .6rem "DM Mono",monospace;text-transform:uppercase;letter-spacing:.08em}
+
+    /* MARQUEE */
+    .marquee{border-block:1px solid var(--line);overflow:hidden;background:rgba(255,255,255,.018)}
+    .marquee-track{display:flex;gap:34px;width:max-content;padding:17px 0;animation:scroll 28s linear infinite}
+    .marquee span{font:400 .7rem "DM Mono",monospace;color:#7890a8;text-transform:uppercase;letter-spacing:.1em}
+    .marquee span:after{content:"✦";color:var(--cyan);margin-left:34px}
+    @keyframes scroll{to{transform:translateX(-50%)}}
+
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .glass{
+      background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+      padding:28px;box-shadow:0 14px 50px rgba(0,0,0,.12)
+    }
+    .about-text{color:#a9bcd0;font-size:.96rem}
+    .about-text p+p{margin-top:17px}
+    .facts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .fact{padding:20px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.02)}
+    .fact b{font-size:1.05rem;display:block;margin-bottom:5px}
+    .fact span{color:var(--muted);font-size:.72rem}
+
+    /* SKILLS */
+    .capability-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .capability-card{
+      min-height:190px;padding:26px;border:1px solid var(--line);border-radius:20px;
+      background:linear-gradient(145deg,rgba(16,36,59,.75),rgba(9,21,36,.62));
+      position:relative;overflow:hidden
+    }
+    .capability-card:after{
+      content:"";position:absolute;width:130px;height:130px;right:-70px;bottom:-70px;
+      border-radius:50%;background:radial-gradient(circle,rgba(83,224,255,.11),transparent 68%)
+    }
+    .capability-number{color:var(--cyan);font:400 .65rem "DM Mono",monospace;letter-spacing:.12em}
+    .capability-card h3{font-size:1.15rem;margin:22px 0 8px}
+    .capability-card p{color:var(--muted);font-size:.78rem;line-height:1.7}
+
+    /* PROJECTS */
+    .projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .project{
+      position:relative;overflow:hidden;min-height:340px;
+      background:linear-gradient(145deg,rgba(16,36,59,.88),rgba(9,21,36,.78));
+      border:1px solid var(--line);border-radius:20px;padding:30px;
+      transition:.28s
+    }
+    .project:not(.featured):before{
+      content:"";position:absolute;left:30px;right:30px;top:0;height:1px;
+      background:linear-gradient(90deg,var(--cyan),transparent)
+    }
+    .project:not(.featured){display:flex;flex-direction:column}
+    .project:not(.featured) .project-tags{margin-top:auto;padding-top:22px}
+    .project:not(.featured) .project-link{margin-top:18px}
+    .project:hover{transform:translateY(-6px);border-color:rgba(83,224,255,.35);box-shadow:var(--shadow)}
+    .project.featured{grid-column:1/-1;min-height:0;padding:16px;display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:center}
+    .project.featured .project-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:24px}
+    .project.featured h3{font-size:clamp(1.7rem,3vw,2.4rem);margin:18px 0 12px}
+    .project.featured p{max-width:620px}
+    .project.featured .project-tags{margin-top:17px}
+    .project.featured .project-link{margin-top:22px;padding:11px 14px;border:1px solid rgba(83,224,255,.28);border-radius:10px;background:rgba(83,224,255,.07)}
+    .project.featured .project-link:hover{background:rgba(83,224,255,.14)}
+    .project-details{padding:21px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025)}
+    .project-details-title{color:var(--cyan);font:500 .65rem "DM Mono",monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+    .project-detail{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:15px 0;border-bottom:1px solid var(--line)}
+    .project-detail:last-child{padding-bottom:0;border-bottom:0}
+    .project-detail>span{color:var(--cyan);font:400 .62rem "DM Mono",monospace;padding-top:3px}
+    .project-detail strong{display:block;color:#e5f1fc;font-size:.78rem}
+    .project-detail small{display:block;color:var(--muted);font-size:.7rem;line-height:1.55;margin-top:3px}
+    .project-num{font:400 .66rem "DM Mono",monospace;color:var(--cyan);letter-spacing:.12em}
+    .project h3{font-size:1.55rem;letter-spacing:-.035em;margin:20px 0 12px}
+    .project p{color:var(--muted);font-size:.86rem;line-height:1.7;max-width:720px}
+    .project-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+    .project-tags span{font:400 .61rem "DM Mono",monospace;color:#9eb4c9;border:1px solid var(--line);padding:6px 8px;border-radius:7px}
+    .project-link{display:inline-flex;margin-top:25px;color:#dff9ff;font-size:.75rem;font-weight:800}
+    .project-glow{position:absolute;right:-70px;bottom:-90px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(90,169,255,.16),transparent 67%)}
+    .project-list{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:25px}
+    .project-list div{padding:11px;border:1px solid var(--line);border-radius:11px;color:#9bb1c7;font:400 .62rem/1.5 "DM Mono",monospace}
+
+    /* CLIENT PROCESS */
+    .timeline{position:relative;margin-left:8px}
+    .timeline:before{content:"";position:absolute;left:7px;top:0;bottom:0;width:1px;background:var(--line)}
+    .timeline-item{position:relative;padding-left:38px;padding-bottom:38px}
+    .timeline-item:last-child{padding-bottom:0}
+    .timeline-dot{position:absolute;left:2px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px rgba(83,224,255,.45)}
+    .timeline-meta{font:400 .67rem "DM Mono",monospace;color:var(--cyan);letter-spacing:.08em;text-transform:uppercase}
+    .timeline h3{margin:7px 0 3px;font-size:1.15rem}
+    .timeline-company{color:#c5d8ea;font-size:.82rem}
+    .timeline p{color:var(--muted);font-size:.82rem;margin-top:10px;max-width:780px}
+
+    /* SERVICES / VALUE */
+    .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .value-card{padding:25px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.02)}
+    .value-icon{font-size:1.35rem;margin-bottom:22px}
+    .value-card h3{font-size:1rem;margin-bottom:9px}
+    .value-card p{color:var(--muted);font-size:.76rem}
+
+    /* CONTACT */
+    .contact-box{
+      padding:55px;border-radius:30px;border:1px solid rgba(83,224,255,.18);
+      background:radial-gradient(circle at 90% 10%,rgba(83,224,255,.14),transparent 30%),
+                 linear-gradient(145deg,rgba(13,34,56,.92),rgba(7,18,31,.9));
+      display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:end
+    }
+    .contact-box h2{font-size:clamp(2.2rem,5vw,4.5rem);line-height:.95;letter-spacing:-.06em}
+    .contact-box p{color:var(--muted);margin-top:17px;max-width:620px}
+    .contact-details{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+    .contact-details a,.contact-details span{font:400 .72rem "DM Mono",monospace;color:#c5d8ea}
+    .contact-details a:hover{color:var(--cyan)}
+
+    footer{padding:30px 0 45px;color:#61788f;font:400 .65rem "DM Mono",monospace;text-align:center}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    @media(max-width:900px){
+      .hero-grid,.skills-wrap,.about-grid,.contact-box{grid-template-columns:1fr}
+      .capability-grid{grid-template-columns:1fr 1fr}
+      .hero{padding-top:130px}
+      .projects{grid-template-columns:1fr}
+      .project.featured{grid-column:auto;grid-template-columns:1fr;gap:12px}
+      .project.featured .project-copy{padding:18px 12px}
+      .project-details{padding:18px}
+      .value-grid{grid-template-columns:repeat(2,1fr)}
+      .contact-box{padding:35px}
+    }
+    @media(max-width:650px){
+      .container{width:min(var(--max),calc(100% - 28px))}
+      .section{padding:80px 0}
+      nav{top:9px}.nav-links{display:none}.nav-cta{display:none}
+      h1{font-size:clamp(3.2rem,18vw,5rem)}
+      .hero{padding-top:115px}
+      .hero-panel{margin-top:5px}
+      .hero-metrics{grid-template-columns:1fr 1fr}
+      .facts{grid-template-columns:1fr}
+      .capability-grid{grid-template-columns:1fr}
+      .project{padding:24px}
+      .project:not(.featured):before{left:24px;right:24px}
+      .project-list{grid-template-columns:1fr}
+      .value-grid{grid-template-columns:1fr}
+      .contact-box{padding:28px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}.marquee-track{animation:none}.reveal{transition:none}
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a class="logo" href="#top">VT<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Capabilities</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="mailto:vrajtalaviya00@gmail.com">Let's talk ↗</a>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="availability"><span class="dot"></span> Available for client projects</div>
+          <h1>Vraj<br><span class="gradient-text">Talaviya.</span></h1>
+          <p class="hero-role"><strong>Web, marketing & design services</strong> for your business.</p>
+          <p class="hero-copy">
+            From responsive websites and custom full-stack builds to Google and Meta Ads, social media management
+            and catalogue design, I help businesses build their online presence and reach customers.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#projects">See client work ↓</a>
+            <a class="btn btn-ghost" href="mailto:vrajtalaviya00@gmail.com?subject=Project%20enquiry">Discuss a project ↗</a>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Core capabilities">
+          <div class="terminal-top" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="code-line"><span class="key">role</span> = <span class="str">"Developer & Digital Partner"</span></div>
+          <div class="code-line"><span class="key">focus</span> = [<span class="str">"Web"</span>, <span class="str">"AI"</span>, <span class="str">"Data"</span>]</div>
+          <div class="code-line"><span class="key">delivery</span> = <span class="val">"Idea to Launch"</span></div>
+          <div class="hero-metrics">
+            <div class="metric"><b>Full</b><span>Stack builds</span></div>
+            <div class="metric"><b>AI</b><span>Driven products</span></div>
+            <div class="metric"><b>Custom</b><span>Built for you</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Artificial Intelligence</span><span>Machine Learning</span><span>Generative AI</span>
+        <span>Full-Stack Development</span><span>Data Science</span><span>Next.js</span>
+        <span>Artificial Intelligence</span><span>Machine Learning</span><span>Generative AI</span>
+        <span>Full-Stack Development</span><span>Data Science</span><span>Next.js</span>
+      </div>
+    </div>
+
+    <section class="section reveal" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">01 / About</div>
+          <h2 class="section-title">A hands-on partner for your <span class="gradient-text">next project.</span></h2>
+          <p class="section-copy">Clear communication, thoughtful engineering and useful digital solutions tailored to your goals.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="glass about-text">
+            <p>
+              I'm Vraj Talaviya, an independent developer helping businesses improve how they present themselves,
+              connect with customers and get work done through digital products.
+            </p>
+            <p>
+              I take projects from an initial conversation to a finished solution: understanding your needs,
+              agreeing on a practical direction, building the product and helping get it ready to use.
+            </p>
+            <p>
+              My work includes business websites, AI and data-driven applications, and a new metro canopy cleaning initiative.
+            </p>
+          </div>
+
+          <div class="facts">
+            <div class="fact"><b>Direct collaboration</b><span>Work with me from brief to delivery</span></div>
+            <div class="fact"><b>Business websites</b><span>Clear, responsive online presence</span></div>
+            <div class="fact"><b>AI & automation</b><span>Practical tools for real workflows</span></div>
+            <div class="fact"><b>Custom software</b><span>Designed around your requirements</span></div>
+            <div class="fact"><b>End-to-end delivery</b><span>Planning, development and launch</span></div>
+            <div class="fact"><b>Ongoing support</b><span>Improvements as needs evolve</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">02 / Capabilities</div>
+          <h2 class="section-title">Solutions built around <span class="gradient-text">your needs.</span></h2>
+        </div>
+
+        <div class="capability-grid">
+          <div class="capability-card">
+            <div class="capability-number">01 / WEB</div>
+            <h3>Business Websites</h3>
+            <p>Professional, responsive websites that present your company clearly and turn visitors into inquiries.</p>
+          </div>
+          <div class="capability-card">
+            <div class="capability-number">02 / SOFTWARE</div>
+            <h3>Custom Platforms</h3>
+            <p>Tailored web applications for operations, customer management, catalogs, bookings and business workflows.</p>
+          </div>
+          <div class="capability-card">
+            <div class="capability-number">03 / INTELLIGENCE</div>
+            <h3>AI & Data Solutions</h3>
+            <p>Practical AI tools, automation and data-driven features designed around real use cases.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">03 / Services</div>
+          <h2 class="section-title">Practical services for <span class="gradient-text">growing businesses.</span></h2>
+          <p class="section-copy">A flexible mix of design, development and digital marketing to help your business show up and connect online.</p>
+        </div>
+        <div class="value-grid">
+          <div class="value-card"><div class="value-icon">▧</div><h3>Website Design</h3><p>Modern, responsive websites with clear navigation and a polished experience across devices.</p></div>
+          <div class="value-card"><div class="value-icon">⌘</div><h3>Full-Stack Development</h3><p>Frontend, backend and database development tailored to your business needs and workflows.</p></div>
+          <div class="value-card"><div class="value-icon">↗</div><h3>Google Ads</h3><p>Campaign setup and management to help your business reach relevant customers through search.</p></div>
+          <div class="value-card"><div class="value-icon">◎</div><h3>Meta Ads</h3><p>Facebook and Instagram advertising to promote your services or products to the right audiences.</p></div>
+          <div class="value-card"><div class="value-icon">◌</div><h3>Social Media Management</h3><p>Content planning, publishing and account support for a consistent social media presence.</p></div>
+          <div class="value-card"><div class="value-icon">▦</div><h3>Catalogue Design</h3><p>Organized digital or print-ready catalogues that present your products clearly.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">04 / Selected Work</div>
+          <h2 class="section-title">Projects with a <span class="gradient-text">purpose.</span></h2>
+          <p class="section-copy">Selected work built to solve practical business and operational needs.</p>
+        </div>
+
+        <div class="projects">
+          <article class="project featured">
+            <div class="project-copy">
+              <div class="project-num">01 — CLIENT WEBSITE · MELBOURNE, AUSTRALIA</div>
+              <h3>Metro Canopy Cleaning</h3>
+              <p>
+                A customer-focused website for Melbourne commercial kitchens that need canopy and exhaust-system
+                cleaning. It explains the service options, guides visitors through an estimate request, and sets out
+                the reporting and maintenance records provided after service.
+              </p>
+              <div class="project-tags">
+                <span>Canopy & Exhaust Cleaning</span><span>Estimate Request</span><span>Service Reporting</span>
+              </div>
+              <a class="project-link" href="https://metrocanopycleaning.com.au/" target="_blank" rel="noopener">Visit live website ↗</a>
+            </div>
+            <div class="project-details">
+              <div class="project-details-title">Service experience</div>
+              <div class="project-detail">
+                <span>01</span>
+                <div><strong>Choose the right service</strong><small>Canopy-only, full exhaust system, site review or scheduled service.</small></div>
+              </div>
+              <div class="project-detail">
+                <span>02</span>
+                <div><strong>Request an estimate</strong><small>A guided form captures system details to prepare an indicative estimate.</small></div>
+              </div>
+              <div class="project-detail">
+                <span>03</span>
+                <div><strong>Keep clear service records</strong><small>Reports and photos after service, with a cleaning certificate where applicable.</small></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-num">02 — AI PRODUCT</div>
+            <h3>IntelliInterview — AI Candidate Assessment</h3>
+            <p>
+              An AI-powered interview platform designed to simulate technical and behavioral interviews,
+              generate adaptive questions, evaluate responses and turn performance into actionable feedback.
+              The system brings together AI interaction, assessment workflows, analytics and a hiring-oriented portal.
+            </p>
+            <div class="project-list">
+              <div>Adaptive interview flow</div><div>AI-generated questions</div><div>Performance analytics</div>
+              <div>Candidate assessment</div><div>Company hiring workflow</div><div>Full-stack architecture</div>
+            </div>
+            <div class="project-tags">
+              <span>Next.js</span><span>TypeScript</span><span>Python</span><span>Gemini / LLMs</span>
+              <span>PostgreSQL</span><span>RAG</span><span>AI Assessment</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-num">03 — BUSINESS PLATFORM</div>
+            <h3>Nine International</h3>
+            <p>
+              Full-stack B2B export platform built with Next.js 15, React 19, TypeScript, and PostgreSQL (Neon).
+              Designed secure backend APIs with Drizzle ORM, responsive SEO-optimized frontend using Tailwind CSS,
+              and integrated NextAuth authentication, multilingual support, Cloudinary image management, email services,
+              dynamic product/blog management, and Google Analytics. Deployed on Vercel with optimized performance.
+            </p>
+            <div class="project-tags">
+              <span>Next.js 15</span><span>React 19</span><span>TypeScript</span><span>PostgreSQL</span>
+              <span>Drizzle ORM</span><span>Cloudinary</span><span>NextAuth</span><span>SEO</span><span>Vercel</span>
+            </div>
+            <a class="project-link" href="https://www.nineinternational.in" target="_blank" rel="noopener">View website ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-num">04 — AGRICULTURE WEBSITE</div>
+            <h3>Jeeva Chemicals</h3>
+            <p>
+              Business website for an agricultural solutions company specializing in innovative foliar fertilizers
+              and plant nutrition products. Presents the company's sustainable agriculture mission, product
+              specializations and next-generation fertilizer benefits in a clear, responsive experience.
+            </p>
+            <div class="project-tags">
+              <span>Business Website</span><span>Responsive UI</span><span>Product Presentation</span>
+              <span>SEO</span><span>Lead Generation</span>
+            </div>
+            <a class="project-link" href="https://www.jeevachemicals.com/" target="_blank" rel="noopener">View website ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-num">05 — BUSINESS PLATFORM</div>
+            <h3>Glovanta Exim</h3>
+            <p>
+              Modern import-export web platform focused on presenting products, company credibility and
+              inquiry-driven lead generation for an international trading business. Designed for responsive,
+              scalable growth across product categories and export markets.
+            </p>
+            <div class="project-tags">
+              <span>Full-Stack</span><span>Next.js</span><span>PostgreSQL</span><span>REST APIs</span>
+              <span>Responsive UI</span><span>SEO</span>
+            </div>
+            <a class="project-link" href="https://www.glovantaexim.com" target="_blank" rel="noopener">View website ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-num">06 — COMPUTER VISION</div>
+            <h3>AI Smart Kitchen</h3>
+            <p>
+              AI-driven kitchen management concept focused on reducing food waste and improving restaurant operations
+              through computer vision, inventory intelligence, spoilage prediction and data-driven recommendations.
+            </p>
+            <div class="project-tags">
+              <span>Python</span><span>Computer Vision</span><span>Machine Learning</span><span>Analytics</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-num">07 — ML / DATA</div>
+            <h3>Diamond Quality Prediction</h3>
+            <p>
+              Deep learning model developed to predict diamond shape,
+              clarity, color and other parameters from images. Applied computer vision and ML techniques to automate 
+              expert-level diamond assessment, translating manual processes into a repeatable production workflow.
+            </p>
+            <div class="project-tags">
+              <span>Python</span><span>Deep Learning</span><span>Computer Vision</span><span>Image Prediction</span><span>Data Analysis</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="process">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">05 / Working Together</div>
+          <h2 class="section-title">A clear path from idea <span class="gradient-text">to delivery.</span></h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-meta">Step 01</div>
+            <h3>Understand your goals</h3>
+            <div class="timeline-company">A focused first conversation</div>
+            <p>
+              We discuss what you need, who it is for and what a successful result should look like.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-meta">Step 02</div>
+            <h3>Agree on a practical plan</h3>
+            <div class="timeline-company">Scope, priorities and direction</div>
+            <p>
+              I outline an approach that fits your requirements, with clear priorities before development begins.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-meta">Step 03</div>
+            <h3>Build and review together</h3>
+            <div class="timeline-company">Progress you can see and shape</div>
+            <p>
+              I develop the solution and share progress so your feedback can guide the details along the way.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-meta">Step 04</div>
+            <h3>Launch and keep improving</h3>
+            <div class="timeline-company">Ready for real-world use</div>
+            <p>
+              We prepare the finished work for launch and identify any useful next steps or ongoing improvements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">06 / What You Can Expect</div>
+          <h2 class="section-title">A thoughtful partner for <span class="gradient-text">your project.</span></h2>
+        </div>
+        <div class="value-grid">
+          <div class="value-card"><div class="value-icon">⌁</div><h3>Built around your needs</h3><p>Practical solutions shaped by your goals, audience and day-to-day challenges.</p></div>
+          <div class="value-card"><div class="value-icon">◈</div><h3>Clear communication</h3><p>Know what is being built, why it matters and what comes next.</p></div>
+          <div class="value-card"><div class="value-icon">↗</div><h3>Made to be useful</h3><p>Thoughtful, reliable digital work designed for real people and real use.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <div class="eyebrow">07 / Contact</div>
+            <h2>Have a project<br/><span class="gradient-text">in mind?</span></h2>
+            <p>Tell me what you are looking to improve or build. I’d be glad to discuss how I can help.</p>
+          </div>
+          <div class="contact-details">
+            <a href="mailto:vrajtalaviya00@gmail.com?subject=Project%20enquiry">vrajtalaviya00@gmail.com ↗</a>
+            <a href="tel:+919601061710">+91 9601061710 (Call) ↗</a>
+            <a href="https://wa.me/919601061710">+91 9601061710 (WhatsApp) ↗</a>
+            <span>Surat, Gujarat, India</span>
+            <a href="https://www.nineinternational.in" target="_blank" rel="noopener">Recent build: Nine International ↗</a>
+            <a href="https://www.glovantaexim.com" target="_blank" rel="noopener">Recent build: Glovanta Exim ↗</a>
+            <a class="btn btn-primary" href="mailto:vrajtalaviya00@gmail.com?subject=Project%20enquiry">Discuss your project →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Vraj Talaviya · Web · AI · Software · 2026</div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
